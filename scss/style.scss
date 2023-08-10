@@ -1,0 +1,162 @@
+@use 'globals' as g;
+
+$layout-breakpoint-small: 960px;
+
+body {
+  background-color: g.$light-grey;
+  padding-inline: 2rem;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5.25rem;
+  padding-inline: 1.5rem;
+  padding-block: 3rem;
+  background-color: g.$white;
+  max-width: 343px;
+  margin-inline: auto;
+  border-radius: 1.5rem 1.5rem 6rem 1.5rem;
+
+  &__form {
+    display: flex;
+    gap: 1rem;
+
+    label {
+      font-family: "Poppins-Bold";
+      color: g.$smokey-grey;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    label.error{
+      color: g.$light-red;
+    }
+
+    input {
+      margin-top: 0.25rem;
+      width: 5.5rem;
+      height: 3.5rem;
+      border-radius: 8px;
+      border: 1px solid g.$light-grey;
+      font-family: "Poppins-Bold";
+      font-size: 1.5rem;
+      padding-left: 1rem;
+    }
+
+    input.error{
+      border: 1px solid g.$light-red;
+    }
+
+    small{
+      margin-top: 0.5rem;
+      color: g.$light-red;
+      font-family: "Poppins-Italic";
+    }
+
+  }
+
+
+  &__separator {
+    margin-top: 4rem;
+    height: 1px;
+    width: 100%;
+    border-top: 1px solid g.$light-grey;
+  }
+
+  &__button {
+    margin-top: -2rem;
+    background-color: g.$purple;
+    border-radius: 100%;
+    border: none;
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    background-color: g.$off-black;
+  }
+
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+
+  &__list {
+    font-family: "Poppins-ExtraBoldItalic";
+    font-size: 3.5rem;
+    padding: 0;
+    line-height: 1.2;
+
+    .highlight {
+      color: g.$purple;
+    }
+  }
+}
+
+
+@media (min-width: $layout-breakpoint-small) {
+  body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    margin-top: 0;
+    min-width: 840px;
+    padding-inline: 3.5rem;
+    align-items: flex-start;
+    border-radius: 24px 24px 200px 24px;
+
+
+    &__form{
+      div{
+        display: flex;
+        flex-direction: column;
+
+
+        input{
+          width: 10rem;
+          height: 4.5rem;
+          padding: 1.5rem;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    &__separator {
+    }
+
+    &__button {
+      margin-top: -3rem;
+      align-self: flex-end;
+      width: 6rem;
+      height: 6rem;
+
+    }
+
+    img {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &__list {
+      margin: 0;
+      font-size: 6.5rem;
+      line-height: 1.2;
+
+    }
+
+
+  }
+
+
+}
+
+
+
